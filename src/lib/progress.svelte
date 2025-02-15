@@ -51,7 +51,7 @@
 	});
 </script>
 
-{#if is_navigating}
+{#if nav.is_navigating}
 	<div class="fixed left-0 top-0 z-[110] w-full">
 		<div
 			class="bar relative z-50 h-0.5 rounded-r-lg bg-gradient-to-bl from-sky-700 to-indigo-700 dark:from-indigo-500 dark:to-sky-400"
