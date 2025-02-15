@@ -26,7 +26,7 @@ A **super smooth and customizable** **navigation progress bar** for **Svelte 5**
 If you're using this in a SvelteKit project, install the necessary dependencies first:
 
 ```sh
-npm install tailwind-merge tailwind-variants
+npm install @friendofsvelte/progress
 ```
 
 ---
@@ -99,7 +99,7 @@ Why? Because **this component already does all the magic for you!** 🪄✨
 
 Unless you have some **wild** navigation setup (*like, interdimensional travel?* 🚀), you can just sit back, relax, and let this **super smooth, stylish progress bar** do all the heavy lifting for you.
 
-> "Customization is great, but perfection is effortless. Let **NavProgress** do its thing." – Some wise Svelte Wizard 🧙‍♂️
+> "Customization is great, but perfection is effortless. Let **Progress** do its thing." – Some wise Svelte Wizard 🧙‍♂️
 
 
 ## **💖 Why Use This?**
