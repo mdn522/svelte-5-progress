@@ -3,7 +3,7 @@
 A **super smooth and customizable** **navigation progress bar** for **Svelte 5**, powered by:
 - **🌀 Svelte 5 Runes** (`$state`, `$derived`)
 - **🌊 svelte/motion** (`Tween`)
-- **🎨 TailwindCSS**
+- **🎨 TailwindCSS v4**
 - **🔮 tailwind-variants & tailwind-merge** for ultimate styling flexibility.
 
 ---
@@ -35,10 +35,10 @@ npm install tailwind-merge tailwind-variants
 ### **Import the component & customize it!**
 ```svelte
 <script>
-	import NavProgress from "./progress.svelte";
+	import { Progress } from "@friendofsvelte/progress";
 </script>
 
-<NavProgress size="md" color="green" />
+<Progress size="md" color="green" />
 ```
 
 #### **You can also control it dynamically:**
@@ -48,7 +48,7 @@ npm install tailwind-merge tailwind-variants
 	const color = "rose";
 </script>
 
-<NavProgress {size} {color} />
+<Progress {size} {color} />
 ```
 
 ---
@@ -74,6 +74,33 @@ npm install tailwind-merge tailwind-variants
 | `"yellow"` | from-yellow-700 to-yellow-500 |
 
 ---
+
+Sure! Here's a **cute** and **fun** way to let them know they **can** customize the navigation logic, but *seriously, why would they?* because **this component is already perfect!** 😎✨
+
+---
+
+### **🎨 Custom component (but like, do you even need to?)** 💅
+Okay, okay—*we get it.* You love control. You want to tweak everything.
+
+🌟 **Guess what?** You *can*! If you're feeling adventurous, you can create your own progress component using `let nav` state.
+
+```svelte
+<script>
+	let nav = $state({
+		is_navigating: true, // You control this now 😎
+		progress: new Tween(42, { duration: 900 }), // Because why not 42?
+	});
+</script>
+<div custom-nav-progress ...></div>
+```
+
+But let's be real— **you probably won’t need to**.  
+Why? Because **this component already does all the magic for you!** 🪄✨
+
+Unless you have some **wild** navigation setup (*like, interdimensional travel?* 🚀), you can just sit back, relax, and let this **super smooth, stylish progress bar** do all the heavy lifting for you.
+
+> "Customization is great, but perfection is effortless. Let **NavProgress** do its thing." – Some wise Svelte Wizard 🧙‍♂️
+
 
 ## **💖 Why Use This?**
 Because **who doesn’t love a beautiful, animated progress bar?** 😍  
