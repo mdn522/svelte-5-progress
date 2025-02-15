@@ -1,58 +1,93 @@
-# create-svelte
+# **Svelte 5 Navigation Progress Bar** 🚀
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+A **super smooth and customizable** **navigation progress bar** for **Svelte 5**, powered by:
+- **🌀 Svelte 5 Runes** (`$state`, `$derived`)
+- **🌊 svelte/motion** (`Tween`)
+- **🎨 TailwindCSS**
+- **🔮 tailwind-variants & tailwind-merge** for ultimate styling flexibility.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+---
 
-## Creating a project
+## **✨ Features**
+✅ **Beautiful animated navigation progress**  
+✅ **Fully customizable** 🖌️ (Size & Color Variants)  
+✅ **Super optimized with Svelte 5 runes** ⚡  
+✅ **Smooth easing animations with `cubicOut`** 🎢  
+✅ **No dependencies (except Tailwind utilities)** 🎯
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
 
-```bash
-# create a new project in the current directory
-npx sv create
+## **📸 Preview**
+🎥 _Coming soon!_
 
-# create a new project in my-app
-npx sv create my-app
+---
+
+## **🚀 Installation**
+If you're using this in a SvelteKit project, install the necessary dependencies first:
+
+```sh
+npm install tailwind-merge tailwind-variants
 ```
 
-## Developing
+---
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## **🛠️ Usage**
+### **Import the component & customize it!**
+```svelte
+<script>
+	import NavProgress from "./progress.svelte";
+</script>
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+<NavProgress size="md" color="green" />
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+#### **You can also control it dynamically:**
+```svelte
+<script>
+	const size = "lg";
+	const color = "rose";
+</script>
 
-## Building
-
-To build your library:
-
-```bash
-npm run package
+<NavProgress {size} {color} />
 ```
 
-To create a production version of your showcase app:
+---
 
-```bash
-npm run build
-```
+## **🎨 Customization**
+### **🌟 Sizes**
+| Variant | Height |
+|---------|--------|
+| `"sm"`  | `0.5rem` |
+| `"md"` (default) | `1rem` |
+| `"lg"`  | `1.5rem` |
 
-You can preview the production build with `npm run preview`.
+### **🌈 Colors**
+| Variant | Gradient |
+|---------|----------|
+| `"blue"` | from-sky-700 to-indigo-700 |
+| `"rose"` | from-rose-700 to-rose-500 |
+| `"amber"` | from-amber-700 to-amber-500 |
+| `"green"` | from-green-700 to-green-500 |
+| `"purple"` | from-purple-700 to-purple-500 |
+| `"indigo"` | from-indigo-700 to-indigo-500 |
+| `"red"` | from-red-700 to-red-500 |
+| `"yellow"` | from-yellow-700 to-yellow-500 |
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+---
 
-## Publishing
+## **💖 Why Use This?**
+Because **who doesn’t love a beautiful, animated progress bar?** 😍  
+It makes navigation **feel smoother, more dynamic, and polished!**
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+> "Good UI is invisible, but you can definitely feel when it's missing!" 🚀
 
-To publish your library to [npm](https://www.npmjs.com):
+---
 
-```bash
-npm publish
-```
+## **📜 License**
+📝 **MIT** – use it however you like! Just give some love back ❤️
+
+---
+
+## **🤝 Contributing**
+👋 Found a bug or have an idea? Open an **issue** or **PR** – I’d love to see your improvements!
+
