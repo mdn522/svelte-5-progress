@@ -2,7 +2,7 @@
 	import { Tween } from 'svelte/motion';
 	export let nav = $state({
 		is_navigating: false,
-		progress: Tween(0, { duration: 500 }),
+		progress: new Tween(0, { duration: 500 }),
 	});
 </script>
 
