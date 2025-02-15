@@ -86,11 +86,12 @@ Okay, okay—*we get it.* You love control. You want to tweak everything.
 🌟 **Guess what?** You *can*! If you're feeling adventurous, you can create your own progress component using `let nav` state.
 
 ```svelte
-<script>
-	let nav = $state({
-		is_navigating: true, // You control this now 😎
-		progress: new Tween(42, { duration: 900 }), // Because why not 42?
-	});
+<script lang="ts">
+    type Nav = {
+      is_navigating: boolen,
+      progress: Tween, 
+    }
+	import { nav } from "@friendofsvelte/progress";
 </script>
 <div custom-nav-progress ...></div>
 ```
