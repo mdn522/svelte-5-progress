@@ -18,7 +18,8 @@ A **super smooth and customizable** **navigation progress bar** for **Svelte 5**
 ---
 
 ## **📸 Preview**
-🎥 _Coming soon!_
+![image](https://github.com/user-attachments/assets/e9fc2689-f35e-41e7-bf10-158db5d17eed)
+
 
 ---
 
