@@ -1,5 +1,4 @@
 <script lang="ts" module>
-	import { Tween } from 'svelte/motion';
 	import { tv } from 'tailwind-variants';
 	import { twMerge } from 'tailwind-merge';
 	import type { NavigationTarget } from '@sveltejs/kit';
@@ -46,6 +45,7 @@
 
 <script lang="ts">
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
+	import { Tween } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
 	import { navigating } from '$app/state';
 
