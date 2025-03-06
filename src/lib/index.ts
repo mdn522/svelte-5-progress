@@ -1,3 +1,3 @@
-import progress, { nav } from './progress.svelte';
+import { default as Progress, nav } from './Progress.svelte';
 
-export { progress as Progress, nav };
+export { Progress, nav };
