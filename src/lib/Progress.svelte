@@ -40,22 +40,43 @@
 		class?: string;
 		size?: keyof NavType['variants']['size'];
 		color?: keyof NavType['variants']['color'];
+		initialDuration?: number;
+		firstPhaseDuration?: number;
+		secondPhaseDuration?: number;
+		completionDuration?: number;
+		resetDelay?: number;
+		firstPhaseEasing?;
+		secondPhaseEasing?;
+		completionEasing?;
 	}
 </script>
 
 <script lang="ts">
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { Tween } from 'svelte/motion';
-	import { cubicOut } from 'svelte/easing';
+	import { cubicOut, linear } from 'svelte/easing';
 	import { navigating } from '$app/state';
 
-	let { size, color, class: className }: ProgressProps = $props();
-	let progress = new Tween(0, { duration: 500 });
+	let {
+		size,
+		color,
+		class: className,
+		initialDuration = 500,
+		firstPhaseDuration = 900,
+		secondPhaseDuration = 600,
+		completionDuration = 800,
+		resetDelay = 500,
+		firstPhaseEasing = cubicOut,
+		secondPhaseEasing = cubicOut,
+		completionEasing = linear
+	}: ProgressProps = $props();
+
+	let progress = new Tween(0, { duration: initialDuration });
 
 	const progressReset = () => {
 		setTimeout(() => {
 			progress.set(0, { duration: 0 });
-		}, 500);
+		}, resetDelay);
 	};
 
 	const progressStyle = $derived(`width: ${progress.current}%`);
@@ -67,8 +88,8 @@
 	beforeNavigate(async (navigation) => {
 		if (!isDiffNavigation(navigation)) {
 			await progress.set(0, { duration: 0 });
-			await progress.set(35, { duration: 900, easing: cubicOut });
-			await progress.set(75, { duration: 600, easing: cubicOut });
+			await progress.set(35, { duration: firstPhaseDuration, easing: firstPhaseEasing });
+			await progress.set(75, { duration: secondPhaseDuration, easing: secondPhaseEasing });
 		} else {
 			await progress.set(0, { duration: 0 });
 		}
@@ -76,7 +97,7 @@
 
 	afterNavigate(async (navigation) => {
 		if (!isDiffNavigation(navigation)) {
-			await progress.set(100, { duration: 800 });
+			await progress.set(100, { duration: completionDuration, easing: completionEasing });
 			progressReset();
 		} else {
 			await progress.set(0, { duration: 0 });
